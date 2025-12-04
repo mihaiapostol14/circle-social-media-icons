@@ -1,0 +1,146 @@
+:root {
+    --bg: #d6e0f0;
+    --white: #fff;
+    --color-icon: #0a3d62;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+}
+
+/* GRID CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 20px;
+    max-width: 550px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* ICON BOX */
+.container .icon-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+/* ICON */
+.container .icon-box .icon {
+    font-size: 2rem;
+    color: var(--color-icon);
+    transition: 0.3s ease;
+}
+
+/* TOOLTIP */
+.container .icon-box:hover::after {
+    content: attr(data-icon-title);
+    position: absolute;
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 8px 12px;
+    bottom: 100%;
+    border-radius: 12px;
+    color: var(--white);
+    background: var(--accent-color);
+    transform: translateY(-10px);
+    white-space: nowrap;
+}
+
+/* HOVER */
+.container .icon-box:hover {
+    cursor: pointer;
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.container .icon-box:hover .icon {
+    color: var(--white);
+}
+
+/* ACCENT COLORS - EXTENDED FULL LIST */
+
+.icon-box.meta { --accent-color: #0668E1; }
+.icon-box.github { --accent-color: #333333; }
+.icon-box.instagram { --accent-color: #e4405f; }
+.icon-box.telegram { --accent-color: #1D98DC; }
+.icon-box.tiktok { --accent-color: #000000; }
+.icon-box.x-twitter { --accent-color: #000000; }
+
+/* SOCIAL MEDIA */
+.icon-box.facebook { --accent-color: #1877F2; }
+.icon-box.youtube { --accent-color: #FF0000; }
+.icon-box.linkedin { --accent-color: #0A66C2; }
+.icon-box.whatsapp { --accent-color: #25D366; }
+.icon-box.discord { --accent-color: #5865F2; }
+.icon-box.reddit { --accent-color: #FF4500; }
+.icon-box.pinterest { --accent-color: #E60023; }
+.icon-box.snapchat { --accent-color: #FFFC00; }
+.icon-box.spotify { --accent-color: #1DB954; }
+.icon-box.twitch { --accent-color: #9146FF; }
+
+/* DEV / TECH */
+.icon-box.gitlab { --accent-color: #FC6D26; }
+.icon-box.stackoverflow { --accent-color: #F48024; }
+.icon-box.bitbucket { --accent-color: #0052CC; }
+.icon-box.codepen { --accent-color: #000000; }
+.icon-box.dev { --accent-color: #0A0A0A; }
+
+/* GOOGLE ECOSYSTEM */
+.icon-box.google { --accent-color: #4285F4; }
+.icon-box.gmail { --accent-color: #EA4335; }
+.icon-box.google-drive { --accent-color: #34A853; }
+.icon-box.google-play { --accent-color: #34A853; }
+
+/* MICROSOFT */
+.icon-box.microsoft { --accent-color: #F25022; }
+.icon-box.windows { --accent-color: #0078D6; }
+
+/* ENTERTAINMENT */
+.icon-box.facebook {--accent-color: #1877F2; }
+.icon-box.apple { --accent-color: #A2AAAD; }
+.icon-box.soundcloud { --accent-color: #FF5500; }
+
+/* GAMING */
+.icon-box.steam { --accent-color: #171A21; }
+.icon-box.xbox { --accent-color: #107C10; }
+.icon-box.playstation { --accent-color: #003791; }
+
+/* MESSAGING */
+.icon-box.messenger { --accent-color: #0084FF; }
+.icon-box.skype { --accent-color: #00AFF0; }
+.icon-box.viber { --accent-color: #7360F2; }
+
+/* E-COMMERCE */
+.icon-box.amazon { --accent-color: #FF9900; }
+.icon-box.paypal { --accent-color: #003087; }
+
+/* DESIGN */
+.icon-box.figma { --accent-color: #F24E1E; }
+.icon-box.dribbble { --accent-color: #EA4C89; }
+.icon-box.behance { --accent-color: #1769FF; }
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .container {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 20px;
+    }
+}
